@@ -7,7 +7,7 @@ const Header = props => (
       <span role="img" aria-label="tree">
         🌴
       </span>
-      Loclandes
+      {props.title}
     </h1>
     <span>Back Office - ADMIN</span>
   </header>
