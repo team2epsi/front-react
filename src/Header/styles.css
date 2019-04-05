@@ -1,0 +1,10 @@
+.Header {
+  align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em;
+}
