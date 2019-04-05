@@ -5,16 +5,17 @@ import ExpeditionItem from "../ExpeditionItem";
 const ExpeditionList = props => (
   <div className="ProductList">
     <ul>
-      <ExpeditionItem titleExpedition="Balade à la cité du vin" />
-      <ExpeditionItem titleExpedition="Visite de Bordeaux" />
+      {props.products.length > 0 ? (
+        props.products.map(product => (
+          <ExpeditionItem
+            key={product.reference}
+            titleExpedition={product.title}
+          />
+        ))
+      ) : (
+        <p>Pas d'expédition disponible...</p>
+      )}
     </ul>
-    {/* {props.expeditions.length > 0 ? (
-      props.expeditions.map(expedition => (
-        <ExpeditionCard key={expedition.reference} title={expedition.title} />
-      ))
-    ) : (
-      <p>Pas d'expédition disponible...</p>
-    )} */}
   </div>
 );
 
