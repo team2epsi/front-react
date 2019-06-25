@@ -19,7 +19,8 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         const products = data.map(product => ({
-          title: product.libelleMiniExcursion,
+          libelleMiniExcursion: product.libelleMiniExcursion,
+          nombresPlaces: product.nombresPlaces,
           reference: product.numMiniExcursion
         }));
 
