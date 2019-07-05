@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles.css";
-import ExpeditionItem from "../ExpeditionItem";
-import FormAddMiniExcursion from "../FormAddMiniExcursion";
+import React from 'react';
+import './styles.css';
+import ExpeditionItem from '../ExpeditionItem';
+import FormAddMiniExcursion from '../FormAddMiniExcursion';
 
 const ExpeditionList = props => (
   <React.Fragment>
@@ -23,6 +23,7 @@ const ExpeditionList = props => (
             props.products.map(product => (
               <ExpeditionItem
                 key={product.reference}
+                id={product.reference}
                 titleExpedition={product.libelleMiniExcursion}
                 placesExpedition={product.nombresPlaces}
               />
