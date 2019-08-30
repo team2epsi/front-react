@@ -63,7 +63,7 @@ class UpdateExcursion extends React.Component {
               <td>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   min="0"
                   max="50"
                   placeholder="nombre de places"
