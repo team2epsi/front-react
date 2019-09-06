@@ -7,7 +7,6 @@ class ButtonDeleteMiniExcursion extends React.Component {
     if (confirm) {
       this.handleDelete();
       console.log('Deleted ' + this.props.id);
-      window.location.reload();
     } else {
       console.log('Not Deleted');
     }
@@ -28,6 +27,7 @@ class ButtonDeleteMiniExcursion extends React.Component {
           throw new Error(response.status);
         } else {
           console.log(this.props.id + ' successfully deleted');
+          window.location.reload();
         }
       })
       .catch(error => {
