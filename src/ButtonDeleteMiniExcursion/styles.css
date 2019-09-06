@@ -1,0 +1,9 @@
+button a {
+  color: #ffffff;
+}
+
+button a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+}
