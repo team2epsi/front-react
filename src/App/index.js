@@ -1,41 +1,39 @@
-import React from 'react';
-import Header from '../Header';
-import ExpeditionList from '../ExpeditionList';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Header from "../Header";
+import NotFound from "../NotFound/";
+import Home from "../Home/";
+import Excursion from "../Excursion/";
+import UpdateExcursion from "../UpdateExcursion/";
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      products: [],
-      basketItems: [],
-    };
-  }
-
-  componentDidMount() {
-    //const URL = "https://sdiscount-api.herokuapp.com/products";
-    const URL = 'https://localhost:44311/api/MiniExcursion';
-    fetch(URL)
-      .then(response => response.json())
-      .then(data => {
-        const products = data.map(product => ({
-          libelleMiniExcursion: product.libelle,
-          nombresPlaces: product.nbPlace,
-          reference: product.id,
-        }));
-
-        this.setState({
-          products,
-        });
-      });
-  }
-
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <Header title="Loclandes" />
-        <ExpeditionList products={this.state.products} />
-      </div>
+
+        <div id="container">
+          <div id="main">
+            <div className="inside">
+              <Switch>
+                <Route path="/" component={Home} exact />
+                {/* <Route path="/soumettre" component={Soumettre} exact /> */}
+                <Route
+                  path="/excursion/read/:idExcursion"
+                  component={Excursion}
+                  exact
+                />
+                <Route
+                  path="/excursion/update/:idExcursion"
+                  component={UpdateExcursion}
+                  exact
+                />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
