@@ -65,6 +65,9 @@ class FormAddMiniExcursion extends React.Component {
               placeExcursionInputText: ""
             });
           }
+
+          alert("Ajout ok !");
+          window.location.href = "/";
           //return response.json();
         }
       })
